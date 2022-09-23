@@ -1,0 +1,102 @@
+/* General */
+body {
+    background-color: gainsboro;
+}
+
+/* Header.js */
+.HeaderCard {
+    background-color: rebeccapurple;
+}
+
+.headerCardTitle {
+    font-family: cursive;
+}
+
+/* CardList.js Component*/
+.memoryCards img {
+    height: 12vh;
+    width: 12vh;
+}
+
+.memoryCardsTitle {
+    text-align: center;
+}
+
+.cardFlipper {
+    cursor: pointer;
+}
+
+/* Card Flip Animations */
+
+.flip-card {
+    background-color: transparent;
+    width: 50vh;
+    height: 20vh;
+    perspective: 1000px;
+}
+
+@media screen and (max-width: 600px) {
+    .flip-card {
+        background-color: transparent;
+        width: 20vh;
+        height: 12vh;
+        perspective: 1000px;
+    }
+
+    .memoryCards img {
+        height: 5vh;
+        width: 5vh;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.flip-card .flip-card-inner.active {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #f4f5f7d0;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+/* scoreBar */
+
+.scoreBar {
+    background: linear-gradient(180deg, #2ecc71, #1abc9c);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+.scoreBar a {
+    text-decoration: none;
+    cursor: text;
+}
+
+.scoreBar .score {
+    color: #FFFFFB;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
